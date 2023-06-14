@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: start_here
+defaults:  # The defaults key will be applied to all chapters and sub-sections
+  titlesonly: False
+parts:
+- caption: Python
+#  maxdepth: 2
+  chapters:
+  - file: notebook1
+    sections:
+    - file: notebook2
+#- caption: R
+#  chapters:
+#  - file: Rtest
+#    sections:
+#    - file: RWorkshop
