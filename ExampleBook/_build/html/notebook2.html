@@ -1,0 +1,969 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1.5. MyST &#8212; Test Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"myfrac": ["\\frac{#1}{#2}", 2], "argmax": ["\\operatorname*{arg\\,max}"], "ptl": "\\partial", "partd": ["\\frac{\\ptl#1}{\\ptl#2}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebook2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.7. Use of regular HTML" href="using_html.html" />
+    <link rel="prev" title="1.4. Using LaTeX" href="using_latex.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="main.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/UoNTransparent.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/UoNTransparent.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="main.html">
+                    Welcome to this template Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Jchapter.html">1. Introduction to Jupyter Books</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">1.1. Jupyter Book Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_notebooks.html">1.2. Simple Notebook Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_jupyter_books.html">1.3. Using Jupyter Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_latex.html">1.4. Using LaTeX</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. MyST</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="using_html.html">1.7. Use of regular HTML</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/edhall125/JBook/blob/main/ExampleBook/notebook2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/notebook2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MyST</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.5. MyST</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6. MyST</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#images-and-figures">Images and Figures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">Tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admonitions">Admonitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx-proof">Sphinx-Proof</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-subheading">A subheading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sub-subheading">A sub-subheading</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-subheading">Another subheading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Tables</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="math notranslate nohighlight">
+\[    \DeclareMathOperator*{\argmin}{arg\,min}\]</div>
+<section class="tex2jax_ignore mathjax_ignore" id="myst">
+<h1><span class="section-number">1.5. </span>MyST<a class="headerlink" href="#myst" title="Permalink to this headline">#</a></h1>
+<p>Note, even though this is a new section in a chapter, we still use the single <code class="docutils literal notranslate"><span class="pre">#</span></code> for the title of the Notebook, rather than the next level <code class="docutils literal notranslate"><span class="pre">##</span></code>.</p>
+<p>For each new Notebook, we need to</p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">1.6. </span>MyST<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>Jupyter Book uses an extended set of commands to standard Markdown. This extension is called MyST (Markedly Structured Text) and has some rather nice features. Unfortunately, they can only be seen in the final book and can look slighty ungainly in the Notebook itself.</p>
+<section id="images-and-figures">
+<h2>Images and Figures<a class="headerlink" href="#images-and-figures" title="Permalink to this headline">#</a></h2>
+<p>Images can be added to a book with the following syntax:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{image} path_to_image 
+:alt: alt_text
+:width: value and measure
+:align: left/center/right
+```
+</pre></div>
+</div>
+<p>As an example:</p>
+<a class="reference internal image-reference" href="_images/UoNTransparent.png"><img alt="logo" class="align-center" src="_images/UoNTransparent.png" style="width: 200px;" /></a>
+<p>Alternatively, a referenceable figure environment with caption is also available. This has syntax:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{figure} path_to_figure
+---
+height: value and measure
+name: label
+---
+caption
+```
+</pre></div>
+</div>
+<p>As an example:</p>
+<figure class="align-default" id="logo-ref">
+<a class="reference internal image-reference" href="_images/UoNTransparent.png"><img alt="logo" src="_images/UoNTransparent.png" style="height: 100px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The University of Nottingham Logo</span><a class="headerlink" href="#logo-ref" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The figure can then be referenced using</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{ref}`label` or 
+{ref}`text &lt;label&gt;` or
+{numref}`label`
+</pre></div>
+</div>
+<p>For example, <a class="reference internal" href="#logo-ref"><span class="std std-ref">The University of Nottingham logo</span></a> or <a class="reference internal" href="#logo-ref"><span class="std std-numref">Fig. 1.1</span></a></p>
+</section>
+<section id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">#</a></h2>
+<p>Although Markdown provides its own table syntax, the MyST seems slightly more simple to use, other environments can be put inside these table cells, and tables can be referenced. Of course, the standard Markdown format can be used as well, but it is omitted for brevity.</p>
+<p>The syntax to create a table is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{list-table} [Name of Table]
+:header-rows: number
+[:name: label]
+* - Col1
+  - Col2
+* - Row1 under Col1
+  - Row1 under Col2
+* - Row2 under Col1
+  - Row2 under Col2
+```
+</pre></div>
+</div>
+<p>As an example:</p>
+<table class="table" id="table-label">
+<caption><span class="caption-number">Table 1.1 </span><span class="caption-text">Fruit</span><a class="headerlink" href="#table-label" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Red</p></th>
+<th class="head"><p>Yellow</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>apple</p></td>
+<td><p>banana</p></td>
+</tr>
+<tr class="row-odd"><td><p>tomato</p></td>
+<td><p>mango</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tables can be referenced using</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{numref}`label`
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{ref}`some text &lt;label&gt;`
+</pre></div>
+</div>
+<p>Hence, we reference <a class="reference internal" href="#table-label"><span class="std std-numref">Table 1.1</span></a> and <a class="reference internal" href="#table-label"><span class="std std-ref">Fruit</span></a>.</p>
+<p>We can have 0 header row tables, if we wish:</p>
+<table class="table" id="id3">
+<caption><span class="caption-number">Table 1.2 </span><span class="caption-text">Fruit - no headers</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>apple</p></td>
+<td><p>banana</p></td>
+</tr>
+<tr class="row-even"><td><p>tomato</p></td>
+<td><p>mango</p></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, here is an example of a table with different environments inside</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note inside a table</p>
+</div>
+</td>
+<td><div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Danger in the table</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="admonitions">
+<h2>Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this headline">#</a></h2>
+<p>One feature is admonitions, which are things like warnings, notes, etc.</p>
+<p>The general syntax is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{admonition_name}
+Text
+```
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a note</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Here is a warning</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Here is a tip</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Danger Will Robinson!</p>
+</div>
+<p>Alternatively, the <code class="docutils literal notranslate"><span class="pre">admonition</span></code> environment can be used to give the a custom title, the syntax is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{admonition} Title
+Some text goes here
+```
+</pre></div>
+</div>
+<div class="admonition-custom-title admonition">
+<p class="admonition-title">Custom Title</p>
+<p>Some text</p>
+</div>
+<p>The full list of admonitions is:</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>admonition</p></td>
+<td><p>note</p></td>
+<td><p>warning</p></td>
+<td><p>tip</p></td>
+<td><p>caution</p></td>
+</tr>
+<tr class="row-even"><td><p>danger</p></td>
+<td><p>error</p></td>
+<td><p>hint</p></td>
+<td><p>important</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For those more familiar with RMarkdown, the alternative ‘colon fencing’ can be used</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>:::{admonition_name}
+Text
+:::
+</pre></div>
+</div>
+<div class="admonition-testing-the-colon-fencing admonition">
+<p class="admonition-title">Testing the colon fencing</p>
+<p>Test text</p>
+</div>
+<p>If we want, we can have environments nested in other environments, to do this increase the number of backtick ‘fences’ in the nest environments</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a warning</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a note inside a warning</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="sphinx-proof">
+<h2>Sphinx-Proof<a class="headerlink" href="#sphinx-proof" title="Permalink to this headline">#</a></h2>
+<p>The Sphinx-Proof package can be used to create referenceable Theorem, Lemma, proof, etc boxed environments. The CSS template should ensure these are consistent with the similar environments in RMarkdown. Sphinx-Proof is switched on already in the template `_config.yml’ file, using this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sphinx: 
+    extra_extensions:
+        - sphinx_proof
+</pre></div>
+</div>
+<p>The syntax for creating these environments is very similar to admonitions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{prf:name} [Title]
+Text
+```
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note, <code class="docutils literal notranslate"><span class="pre">Title</span></code> is not required.</p>
+</div>
+<p>As an example:</p>
+<div class="proof theorem admonition" id="theorem-0">
+<p class="admonition-title"><span class="caption-number">Theorem 1.1 </span> (Theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>Some stuff</p>
+</section>
+</div><p>Labels can also be added to make the environments referenceable. The syntax for doing this is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{prf:name} [Title]
+:label: label_name
+Some text
+```
+</pre></div>
+</div>
+<p>As an example,</p>
+<div class="proof theorem admonition" id="first_label">
+<p class="admonition-title"><span class="caption-number">Theorem 1.2 </span> (Test Theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>Some text</p>
+</section>
+</div><p>The environments can then be referenced using the syntax</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{prf:ref}`label_name`
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{prf:ref}`Some text &lt;label_name&gt;`
+</pre></div>
+</div>
+<p>Hence, we can reference like this: <a class="reference internal" href="#first_label">Theorem 1.2</a> or this <a class="reference internal" href="#first_label">Test Theorem</a>.</p>
+<p>The full list of Sphinx-Proof Environments is:</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Algorithms</p></td>
+<td><p>Axioms</p></td>
+<td><p>Conjectures</p></td>
+<td><p>Corollaries</p></td>
+<td><p>Criteria</p></td>
+<td><p>Definitions</p></td>
+<td><p>Examples</p></td>
+</tr>
+<tr class="row-even"><td><p>Lemmas</p></td>
+<td><p>Observations</p></td>
+<td><p>Properties</p></td>
+<td><p>Propositions</p></td>
+<td><p>Proofs</p></td>
+<td><p>Remarks</p></td>
+<td><p>Theorems</p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="xref myst">First Notebook</span></p>
+<p>Try adding a figure, but don’t show the code that produces it (check out Cell Metadata). Here remove-input has been used, but hide-input allows the code to be uncovered if desired.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/5645131eb9ac41e8e31e053e0e8b3d12ed915767f0f93b6eabf0c257de36dc95.png" src="_images/5645131eb9ac41e8e31e053e0e8b3d12ed915767f0f93b6eabf0c257de36dc95.png" />
+</div>
+</div>
+</section>
+<section id="a-subheading">
+<h2>A subheading<a class="headerlink" href="#a-subheading" title="Permalink to this headline">#</a></h2>
+<div class="command"> blah </div>
+<div class="test"> blah </div>
+<div class="theorem"> 
+    <p class="caption"> Theorem Name </p>
+    <p> Picking up a theorem environment from the style file.</p> 
+    <p> Markdown Maths doesn't seem to get picked up in these environments. </p>
+    <p> Perhaps we gave to use proper html syntax? </p>
+    <span class="math notranslate nohighlight">\(a+b = 2\)</span>
+    $$a+b=2$$
+</div>
+<div class="example">
+    <p> Picking up an example environment from the style file.  </p>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a note, does it work?</p>
+<p>It is picking up the note environment from the style file</p>
+</div>
+<div class="admonition-extra-credit admonition">
+<p class="admonition-title">Extra Credit</p>
+<p>Some stuff</p>
+</div>
+<div class="admonition-theorem-10 admonition">
+<p class="admonition-title">Theorem 10</p>
+<p>Some more stuff</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Here is a warning</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Here is a tip</p>
+</div>
+<div class="admonition-testing-the-colon-fencing admonition">
+<p class="admonition-title">Testing the colon fencing</p>
+<p>Test</p>
+</div>
+<p>Let’s try and pick up a LaTeX macro from the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file. They should be defined in this position:</p>
+<p>sphinx:
+mathjax3_config:
+tex:
+macros:</p>
+<div class="math notranslate nohighlight">
+\[\myfrac{1}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[\argmax_{x \in X} |x|\]</div>
+<div class="math notranslate nohighlight">
+\[\partd{f}{x},\quad \partd{f}{y}\]</div>
+<section id="a-sub-subheading">
+<h3>A sub-subheading<a class="headerlink" href="#a-sub-subheading" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="another-subheading">
+<h2>Another subheading<a class="headerlink" href="#another-subheading" title="Permalink to this headline">#</a></h2>
+<p>Adding a theorem - need to include this in config.yml
+sphinx:
+extra_extensions:
+- sphinx_proof</p>
+<div class="proof theorem admonition" id="my-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 1.3 </span> (Orthogonal-Projection-Theorem)</p>
+<section class="theorem-content" id="proof-content">
+<p>Given <span class="math notranslate nohighlight">\(y \in \mathbb R^n\)</span> and linear subspace <span class="math notranslate nohighlight">\(S \subset \mathbb R^n\)</span>,
+there exists a unique solution to the minimization problem</p>
+<div class="math notranslate nohighlight" id="equation-eq-label1">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-eq-label1" title="Permalink to this equation">#</a></span>\[\hat y := \argmin_{z \in S} \|y - z\|\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-label2">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-eq-label2" title="Permalink to this equation">#</a></span>\[\hat y := \argmin_{z \in S} \|y - z\|\]</div>
+<p>The minimizer <span class="math notranslate nohighlight">\(\hat y\)</span> is the unique vector in <span class="math notranslate nohighlight">\(\mathbb R^n\)</span> that satisfies</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat y \in S\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y - \hat y \perp S\)</span></p></li>
+</ul>
+<p>The vector <span class="math notranslate nohighlight">\(\hat y\)</span> is called the <strong>orthogonal projection</strong> of <span class="math notranslate nohighlight">\(y\)</span> onto <span class="math notranslate nohighlight">\(S\)</span>.</p>
+</section>
+</div><p>Reference like this:</p>
+<p><a class="reference internal" href="#my-theorem">Theorem 1.3</a></p>
+<p>or this</p>
+<p><a class="reference internal" href="#my-theorem">Orthog Projection</a></p>
+<p>Can also have lemmas, etc</p>
+<div class="proof lemma admonition" id="my-lemma">
+<p class="admonition-title"><span class="caption-number">Lemma 1.1 </span> (Orthogonal-Projection-Theorem)</p>
+<section class="lemma-content" id="proof-content">
+<div class="math notranslate nohighlight">
+\[a+b=c\]</div>
+</section>
+</div><p>We can also cross reference to the equations like this: <a class="reference internal" href="#equation-eq-label1">(1.3)</a> and <a class="reference internal" href="#equation-eq-label2">(1.4)</a></p>
+<div class="proof admonition" id="proof">
+<p>Proof. <a class="reference internal" href="#my-theorem">Theorem 1.3</a></p>
+<p>Unsurprisngly, we can even add a proof box.</p>
+</div>
+<p>Trying out some AMS math stuff</p>
+<div class="amsmath math notranslate nohighlight" id="equation-65e3308a-71ca-46eb-a99b-323a61bda4c7">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-65e3308a-71ca-46eb-a99b-323a61bda4c7" title="Permalink to this equation">#</a></span>\[\begin{align}
+a &amp;= b + c + d \\
+b &amp;= a + c + d
+\end{align}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \end{pmatrix}\end{split}\]</div>
+<p><code class="xref eq docutils literal notranslate"><span class="pre">eq-label3</span></code></p>
+<p>We can emded some dynamic Desmos:</p>
+<iframe src="https://www.desmos.com/calculator/gvtteacngh?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe><p>Or some Geogebra activities</p>
+<iframe scrolling="no" title="Bisection Algorithm" src="https://www.geogebra.org/material/iframe/id/dwyt7xxx/width/1120/height/463/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1120px" height="463px" style="border:0px;"> </iframe></section>
+<section id="id2">
+<h2>Tables<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<table class="table" id="example-table">
+<caption><span class="caption-number">Table 1.3 </span><span class="caption-text">Give it a title</span><a class="headerlink" href="#example-table" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Training</p></th>
+<th class="head"><p>Validation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>13720</p></td>
+<td><p>2744</p></td>
+</tr>
+</tbody>
+</table>
+<p>Then add a label like this <a class="reference internal" href="#example-table"><span class="std std-numref">Table 1.3</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "edhall125/JBook",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="using_latex.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Using LaTeX</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="using_html.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Use of regular HTML</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.5. MyST</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6. MyST</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#images-and-figures">Images and Figures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">Tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#admonitions">Admonitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx-proof">Sphinx-Proof</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-subheading">A subheading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sub-subheading">A sub-subheading</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-subheading">Another subheading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Tables</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ed
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -3,7 +3,7 @@
 
 title: Test Book
 author: Ed
-logo: UoNTransparent.png
+logo: Figures/UoNTransparent.png
 only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
@@ -17,15 +17,17 @@ latex:
   latex_documents:
     targetname: book.tex
 
+
+
 # Add a bibtex file so that we can create citations
 #bibtex_bibfiles:
 #  - references.bib
 
 # Information about where the book exists on the web
-#repository:
-#  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-#  path_to_book: docs  # Optional path to your book, relative to the repository root
-#  branch: master  # Which branch of the repository should be used when creating links (optional)
+repository:
+  url: https://github.com/edhall125/JBook/  # Online location of your book
+  path_to_book: ExampleBook  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -55,10 +57,12 @@ sphinx:
   extra_extensions:
     - sphinx_proof
   config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     nb_custom_formats:
         .Rmd:
             - jupytext.reads
             - fmt: Rmd
+      
     mathjax3_config:
       tex:
         macros:

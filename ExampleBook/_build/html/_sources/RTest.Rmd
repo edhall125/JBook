@@ -1,0 +1,17 @@
+# Testing Rmd files
+
+## Task 1 - Manipulating Data and Drawing Graphs
+
+```{r}
+mydata = sample(1:100,1000,replace=TRUE)
+
+stripchart(mydata,method="stack",ylab="Frequency",xlab="Value",main="Dot plot of some data")
+
+plot(mydata,type="h",ylab="value",xlab="data point",main="Plot of some data (with h option on)")
+
+barplot(table(mydata),ylab="Frequency",xlab="Value",main="Bar plot of some data")
+
+```
+
+
+

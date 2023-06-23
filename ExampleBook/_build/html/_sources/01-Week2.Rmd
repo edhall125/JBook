@@ -1,0 +1,72 @@
+# Adding in images and tables.
+
+In this week's notes we will look at adding images and basic tables. You can also add a link to the [notes last week][Introduction] by referring to the name of the heading.
+
+## Example of a table
+
+Here is a basic table.
+
+|Header 1| Header 2 | Header 3|
+|:------|:-------|:---------|
+|Row 1 | Number | Number|
+|Row 2 | Number | Number|
+
+## Adding images
+
+We look at two approaches for adding the same image. We add **alternative text** in both cases. You will see how R Markdown treats them differently.
+
+:::remark
+The files must be in the same directory as this 01-Week2.Rmd file.
+:::
+
+### Approach 1
+
+This is the easier approach but the alternative text is not as nice.
+
+![Here is the alternative text](workers.png)
+
+### Approach 2
+
+This is the slightly more difficult approach and requires the use of R, but it is better for "hiding" the alternative text.
+
+```{r,echo=FALSE,fig.alt="Here is the alternative text"}
+knitr::include_graphics("workers.png")
+
+```
+
+## Adding in images using R (or Python)
+
+Press ctrl, alt and i to add R code This adds the chunk below and you can add in R code. Python etc. can also be added by pressing the '+C' image at the top right corner.
+
+As an example please see the following.
+
+```{r,fig.alt="A graph that shows...", fig.cap="A graph demonstrating..."}
+x<-rnorm(100,mean=4,sd=2)
+y<-x^{2}
+plot(x,y,lwd=4,main="Mock plot")
+
+```
+<br>
+
+
+You can also hide code, so that graphs are produced without showing the code, or you can hide output so the code is shown without the results etc. see [the R Markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) for more information.
+
+Here is one example where the graph is produced but the output is hidden, by setting echo=FALSE.
+
+```{r,fig.alt="A graph that shows...", fig.cap="A graph demonstrating...",echo=FALSE}
+x<-rnorm(100,mean=4,sd=2)
+y<-x^{2}
+plot(x,y,lwd=4,main="Mock plot")
+
+```
+<br>
+
+Here is another example where the code is shown but the graph is not shown using eval=FALSE.
+
+```{r,fig.alt="A graph that shows...", fig.cap="A graph demonstrating...",eval=FALSE}
+x<-rnorm(100,mean=4,sd=2)
+y<-x^{2}
+plot(x,y,lwd=4,main="Mock plot")
+
+```
+

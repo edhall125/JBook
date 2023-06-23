@@ -2,18 +2,28 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: start_here
+root: main
 defaults:  # The defaults key will be applied to all chapters and sub-sections
   titlesonly: False
+  maxdepth: 2 #Controls the depth of the table of contents on a page
+
 parts:
-- caption: Python
-#  maxdepth: 2
+- caption: Jupyter
+  numbered: 2 #Control the depth of the numbering, in this case down to Section X.x
+  
   chapters:
-  - file: notebook1
+  - file: Jchapter
     sections:
-    - file: notebook2
-#- caption: R
-#  chapters:
-#  - file: Rtest
-#    sections:
-#    - file: RWorkshop
+    - file: jupyter_install
+    - file: jupyter_overview
+    - file: using_notebooks
+    - file: using_jupyter_books
+    - file: using_latex
+    - file: using_myst
+    - file: using_html
+- caption: R
+  numbered: 2 #Control the depth of the numbering, in this case down to Section X.x
+
+  chapters:
+  - file: using_R
+

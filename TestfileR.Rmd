@@ -1,0 +1,19 @@
+---
+title: "Test file"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Let's just test this.
+
+```{r}
+1+1
+x<-rnorm(1000)
+hist(x)
+```
+
