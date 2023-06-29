@@ -42,6 +42,7 @@ We also need to install the sphinx-proof package, which unfortunately needs to b
 We might also like to ensure the Jupyter Notebooks can run R code as well. To do this, we can install R and the R kernel:
 
 >  `conda install -c r r`
+
 >  `conda install -c r r-irkernel`
 
 Now, from the terminal, open an R console by typing:
@@ -51,6 +52,7 @@ Now, from the terminal, open an R console by typing:
 Then run the following two commands
 
 > `install.packages('IRkernel')`
+
 > `IRkernel::installspec()`
 
 Finally quit R with 

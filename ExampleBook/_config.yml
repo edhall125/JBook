@@ -4,6 +4,8 @@
 title: Test Book
 author: Ed
 logo: Figures/UoNTransparent.png
+#   image_light: Figures/UoNTransparent.png
+#   image_dark: Figures/UoNTransparentDark.png
 only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
@@ -17,28 +19,6 @@ latex:
   latex_documents:
     targetname: book.tex
 
-
-
-# Add a bibtex file so that we can create citations
-#bibtex_bibfiles:
-#  - references.bib
-
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/edhall125/JBook/  # Online location of your book
-  path_to_book: ExampleBook  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
-
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-#html:
-#  use_issues_button: true
-#  use_repository_button: true
-
-launch_buttons:
-  thebe: true
-  notebook_interface: "classic"
-  colab_url: "https://colab.research.google.com"
 
 # html:
 #     extra_navbar: |
@@ -70,6 +50,32 @@ sphinx:
           "argmax": ["\\operatorname*{arg\\,max}"]
           "ptl": "\\partial"
           "partd": ["\\frac{\\ptl#1}{\\ptl#2}",2]
+
+    # html_theme_options: 
+    #   logo:
+    #     image_light: Figures/UoNTransparent.png
+    #     image_dark: Figures/UoNTransparentDark.png
+
+# Add a bibtex file so that we can create citations
+#bibtex_bibfiles:
+#  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/edhall125/JBook/  # Online location of your book
+  path_to_book: ExampleBook  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# # Add GitHub buttons to your book
+# # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# #html:
+#   use_issues_button: true
+#   use_repository_button: true
+
+launch_buttons:
+  thebe: true
+  notebook_interface: "classic"
+  colab_url: "https://colab.research.google.com"
 
 #sphinx:
 #  config:

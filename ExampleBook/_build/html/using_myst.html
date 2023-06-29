@@ -388,7 +388,7 @@ document.write(`
 <p>Jupyter Book uses an extended set of commands to standard Markdown. This extension is called MyST (Markedly Structured Text) and has some rather nice features. Unfortunately, they can only be seen in the final book and can look slighty ungainly in the Notebook itself. A MyST cheat sheet can be found <a class="reference external" href="https://jupyterbook.org/en/stable/reference/cheatsheet.html">here</a>, but below are some of the more useful features.</p>
 <section id="admonitions">
 <h2>Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this headline">#</a></h2>
-<p>One feature is admonitions, which are things like warnings, notes, etc.</p>
+<p>One feature is <em>admonitions</em>, which are things like warnings, notes, etc.</p>
 <p>The general syntax is</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{admonition_name}
 Text
@@ -411,7 +411,7 @@ Text
 <p class="admonition-title">Danger</p>
 <p>Danger Will Robinson!</p>
 </div>
-<p>Alternatively, the <code class="docutils literal notranslate"><span class="pre">admonition</span></code> environment can be used to give the a custom title, the syntax is</p>
+<p>Alternatively, the <code class="docutils literal notranslate"><span class="pre">admonition</span></code> environment can be used to give a custom title, the syntax is</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{admonition} Title
 Some text goes here
 ```
@@ -445,7 +445,7 @@ Some text goes here
 </tr>
 </tbody>
 </table>
-<p>For those more familiar with RMarkdown, the alternative ‘colon fencing’ can be used</p>
+<p>For those familiar with other versions of markdown, the alternative ‘colon fencing’ can be used</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>:::{admonition_name}
 Text
 :::
@@ -481,7 +481,7 @@ caption
 ```
 </pre></div>
 </div>
-<p>As an example:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">alt</span></code> setting is important for ALT text, as it enables screen readers to decribe the figure. Here is an example:</p>
 <figure class="align-default" id="logo-ref">
 <a class="reference internal image-reference" href="_images/UoNTransparent.png"><img alt="logo" src="_images/UoNTransparent.png" style="height: 100px;" /></a>
 <figcaption>
@@ -497,7 +497,7 @@ caption
 <p>For example, <a class="reference internal" href="#logo-ref"><span class="std std-ref">The University of Nottingham logo</span></a> or <a class="reference internal" href="#logo-ref"><span class="std std-numref">Fig. 1.1</span></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A slightly different image environment can also be used, but this is not referenceable and has no captions.</p>
+<p>A slightly different <em>image</em> environment can also be used, but this has no captions.</p>
 </div>
 </section>
 <section id="tables">
@@ -562,7 +562,7 @@ caption
 </tr>
 </tbody>
 </table>
-<p>Finally, here is an example of a table with different environments inside</p>
+<p>Finally, here is an example of a table with different environments inside it. This is discouraged for accessibility though.</p>
 <table class="table">
 <colgroup>
 <col style="width: 50%" />
@@ -585,7 +585,7 @@ caption
 </section>
 <section id="sphinx-proof">
 <h2>Sphinx-Proof<a class="headerlink" href="#sphinx-proof" title="Permalink to this headline">#</a></h2>
-<p>The Sphinx-Proof package can be used to create referenceable Theorem, Lemma, proof, etc boxed environments. The CSS template should ensure these are consistent with the similar environments in RMarkdown. Sphinx-Proof is switched on already in the template `_config.yml’ file, using this:</p>
+<p>The Sphinx-Proof package can be used to create referenceable Theorem, Lemma, proof, etc boxed environments. The final CSS template should ensure these are consistent with the similar environments in Bookdown. Sphinx-Proof is switched on already in the template `_config.yml’ file, using this:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sphinx: 
     extra_extensions:
         - sphinx_proof

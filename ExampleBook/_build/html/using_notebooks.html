@@ -368,6 +368,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notebook-interface">The Notebook interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-blocks">Markdown blocks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">Code blocks</a></li>
 </ul>
@@ -384,14 +385,31 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="simple-jupyter-notebook-use">
 <h1><span class="section-number">1.3. </span>Simple Jupyter Notebook Use<a class="headerlink" href="#simple-jupyter-notebook-use" title="Permalink to this headline">#</a></h1>
 <p>In order to create a Jupyter Book, we should first create some Jupyter Notebooks. If you have familiarity with Jupyter Notebooks, then you can safely skip this section and move to the next one.</p>
-<p>There are essentialy two components to a Jupyter Notebook:</p>
+<section id="the-notebook-interface">
+<h2>The Notebook interface<a class="headerlink" href="#the-notebook-interface" title="Permalink to this headline">#</a></h2>
+<p>A Jupyter Notebook can either be opened (in a web browser) from Anaconda Navigator, or directly through a terminal/Anaconda prompt using the command:</p>
+<blockquote>
+<div><p>jupyter notebook name_of_file.ipynb</p>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also use your preferred IDE that supports <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.md</span></code> files.</p>
+</div>
+<p>The web interface will look something like this:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/interface.png"><img alt="Jupyter Notebook web interface" src="_images/interface.png" style="height: 150px;" /></a>
+</figure>
+<p>Hopefully it is fairly straightforward to see what all the controls do and there are some keyboard shortcuts as well.</p>
+<p>There are essentially two components to a Jupyter Notebook:</p>
 <ul class="simple">
-<li><p>Markdown blocks</p></li>
-<li><p>Code blocks</p></li>
+<li><p>Markdown blocks - where the majority of test is written.</p></li>
+<li><p>Code blocks - where code that written and executed.</p></li>
 </ul>
+<p>New blocks can be added with the <code class="docutils literal notranslate"><span class="pre">+</span></code> button and the type of block selected using the drop down under <code class="docutils literal notranslate"><span class="pre">Markdown</span></code>.</p>
+</section>
 <section id="markdown-blocks">
 <h2>Markdown blocks<a class="headerlink" href="#markdown-blocks" title="Permalink to this headline">#</a></h2>
-<p>A markdown block has essentially the same functionality as one in RMarkdown.</p>
+<p>A markdown block has pretty much the same functionality as one in RMarkdown.</p>
 <p>To add a title/subtitle/etc in a block, use <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">##</span></code>, etc, followed by a name, for example, above we have <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Simple</span> <span class="pre">Notebook</span> <span class="pre">Use</span></code> and <code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Markdown</span> <span class="pre">blocks</span></code>. Later we will see how to create a link back to a section in the same/different file.</p>
 <p>A line break can be created using <code class="docutils literal notranslate"><span class="pre">---</span></code>:</p>
 <hr class="docutils" />
@@ -426,14 +444,14 @@ document.write(`
 <li><p>Second item</p></li>
 <li><p>third item</p></li>
 </ol>
-<p>Starting the numbering from another value is also possible too:</p>
+<p>Starting the numbering from another value is also possible:</p>
 <ol class="arabic simple" start="20">
 <li><p>First item</p></li>
 <li><p>Second item</p></li>
 <li><p>third item</p></li>
 </ol>
 <hr class="docutils" />
-<p>If you wish to write some Python inline (and for it not to be executed), put the code within backticks <code class="docutils literal notranslate"><span class="pre">a+b</span></code>. This is also useful for writing things verbatim.</p>
+<p>If you wish to write some Python inline (and for it not to be executed), put the code within backticks <code class="docutils literal notranslate"><span class="pre">a+b</span></code>. This is also useful for writing things <em>verbatim</em>.</p>
 <p>To make something appear in a grey box, use <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> or just indent with a tab:</p>
 <blockquote>
 <div><p>Here is a quote.</p>
@@ -514,7 +532,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable   Type        Data/Info
 --------------------------------
 a          int         10
-add_two    function    &lt;function add_two at 0x1115aba60&gt;
+add_two    function    &lt;function add_two at 0x109a97920&gt;
 np         module      &lt;module &#39;numpy&#39; from &#39;/Us&lt;...&gt;kages/numpy/__init__.py&#39;&gt;
 </pre></div>
 </div>
@@ -590,6 +608,7 @@ np         module      &lt;module &#39;numpy&#39; from &#39;/Us&lt;...&gt;kages/
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-notebook-interface">The Notebook interface</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-blocks">Markdown blocks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks">Code blocks</a></li>
 </ul>

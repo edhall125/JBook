@@ -340,20 +340,20 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> - the configuration file</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> - the table of contents file</p></li>
 </ul>
-<p>See the example files in the <code class="docutils literal notranslate"><span class="pre">ExampleBook/</span></code> folder. Note, files selected in <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> do not need to have an extension - (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) and Markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>/<code class="docutils literal notranslate"><span class="pre">.Rmd</span></code>) are automatically searched for.</p>
+<p>See the example files in the <code class="docutils literal notranslate"><span class="pre">ExampleBook/</span></code> folder. Note, files selected in <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> do not need to have an extension - <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and Markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>/<code class="docutils literal notranslate"><span class="pre">.Rmd</span></code>) are automatically searched for.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Extra styling can be incorporated using a <code class="docutils literal notranslate"><span class="pre">.css</span></code> file inside the <code class="docutils literal notranslate"><span class="pre">_static</span></code> folder. There shouldn’t really be any need to edit this file.</p>
 </div>
 <section id="compiling-a-book">
 <span id="compilation"></span><h2>Compiling a Book<a class="headerlink" href="#compiling-a-book" title="Permalink to this headline">#</a></h2>
-<p>Compilation of a Jupyter book is done at an Anaconda Prompt/terminal and from the folder directly above the top level folder where the files are stored. Hence, for this example book, first navigate to the <code class="docutils literal notranslate"><span class="pre">JBook</span></code> folder created by unzipping <code class="docutils literal notranslate"><span class="pre">JBook.zip</span></code>. You can used the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to change directories.</p>
+<p>Compilation of a Jupyter book is done at an Anaconda Prompt/terminal and from the folder directly above the top level folder where the files are stored. Hence, to compile this example book, first navigate to the <code class="docutils literal notranslate"><span class="pre">JBook</span></code> folder created by unzipping <code class="docutils literal notranslate"><span class="pre">JBook.zip</span></code>. You can used the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to change directories.</p>
 <p>The simplest syntax to use for compilation is</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">folder_name</span></code></p>
 </div></blockquote>
 <p>So, to compile this book, use <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">ExampleBook</span></code>.</p>
-<p>The above checks whether any markdown style files have recently been changed and will not recompile these files if they have not been. Hence, sometimes the book will not recompile, espeially if the <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files are the only ones to have been changed. To enforce compilation of all files, use:</p>
+<p>The above checks whether any markdown style files have recently been changed and will not recompile these files if they have not been. Hence, sometimes the book will not recompile, especially if the <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files are the only ones to have been changed. To enforce compilation of all files, use:</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">folder_name</span></code></p>
 </div></blockquote>

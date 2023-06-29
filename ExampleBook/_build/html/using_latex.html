@@ -418,24 +418,25 @@ a &amp;= d+e
 \[\begin{split}
 \begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \end{pmatrix}
 \end{split}\]</div>
-<p>And other environments are also available:
-$<span class="math notranslate nohighlight">\(
+<p>And other environments are also available:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 H(x) = \begin{cases}
 1, &amp; x &gt; 0 \\
 0, &amp;\text{otherwise.}
 \end{cases}
-\)</span>$</p>
+\end{split}\]</div>
 </section>
 <section id="referencing-equations">
 <h2>Referencing Equations<a class="headerlink" href="#referencing-equations" title="Permalink to this headline">#</a></h2>
-<p>There are two labelling and referencing equations.</p>
-<p>A regular <code class="docutils literal notranslate"><span class="pre">$$...$$</span></code> block can be used, with the following syntax:</p>
+<p>There are two ways of labelling and referencing equations.</p>
+<p>A regular <code class="docutils literal notranslate"><span class="pre">$$...$$</span></code> block can be used labelled with the following syntax:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$$
 LaTeX
 $$ (label_name)
 </pre></div>
 </div>
-<p>or a MyST maths block can used, with this syntax:</p>
+<p>or a MyST maths block can labelled, with this syntax:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{math}
 :label: label_name
 LaTeX
@@ -460,12 +461,12 @@ LaTeX
 <h2>Macros<a class="headerlink" href="#macros" title="Permalink to this headline">#</a></h2>
 <p>User defined <em>macros</em> can be added into the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file. They should be defined in this position:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sphinx:
-	mathjax3_config:
-		tex:
-			macros:
+  mathjax3_config:
+    tex:
+      macros:
 </pre></div>
 </div>
-<p>As an example, <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> contains <code class="docutils literal notranslate"><span class="pre">\myfrac</span></code>, <code class="docutils literal notranslate"><span class="pre">\argmax</span></code> and <code class="docutils literal notranslate"><span class="pre">\partd</span></code>:</p>
+<p>The syntax is a little awkward and not discussed further here ,but as examples, <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> contains <code class="docutils literal notranslate"><span class="pre">\myfrac</span></code>, <code class="docutils literal notranslate"><span class="pre">\argmax</span></code> and <code class="docutils literal notranslate"><span class="pre">\partd</span></code>:</p>
 <div class="math notranslate nohighlight">
 \[\myfrac{1}{2}\]</div>
 <div class="math notranslate nohighlight">

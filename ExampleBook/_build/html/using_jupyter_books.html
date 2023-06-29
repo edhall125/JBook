@@ -368,6 +368,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buttons-in-the-webpage">Buttons in the webpage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-other-sections-pages-in-the-jupyterbook">Referencing other sections/pages in the JupyterBook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-external-webpages">Referencing external webpages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-what-is-shown-in-the-final-book">Controlling what is shown in the final book</a></li>
@@ -384,6 +385,25 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="using-jupyter-books">
 <h1><span class="section-number">1.4. </span>Using Jupyter Books<a class="headerlink" href="#using-jupyter-books" title="Permalink to this headline">#</a></h1>
+<section id="buttons-in-the-webpage">
+<h2>Buttons in the webpage<a class="headerlink" href="#buttons-in-the-webpage" title="Permalink to this headline">#</a></h2>
+<p>After opening the book in a web broswer, you will see a number of buttons along the top of the window:</p>
+<figure class="align-default" id="buttons">
+<a class="reference internal image-reference" href="_images/buttons.png"><img alt="Jupyter buttons" src="_images/buttons.png" style="height: 50px;" /></a>
+</figure>
+<ul class="simple">
+<li><p><i class="fa-solid fa-magnifying-glass"></i> allows users to search the whole of the book, which is extremely useful.</p></li>
+<li><p><i class="fa-solid fa-sun"></i>/<i class="fa-solid fa-moon"></i> allows users to switch from light to dark mode.</p></li>
+<li><p><i class="fas fa-expand"></i>  shows the book in full-screen mode.</p></li>
+<li><p><i class="fas fa-download"></i> allows the source <code class="docutils literal notranslate"><span class="pre">.md</span></code> or <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> to be downloaded, or a PDF version of the page.</p></li>
+<li><p><i class="fas fa-rocket"></i> allows code written in the book to be run. There are two options:</p>
+<ul>
+<li><p>Through Colab as a Jupyter Notebook.</p></li>
+<li><p>Directly in the webpage using ‘Live Code’, although this can be quite slow in loading the kernel.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="referencing-other-sections-pages-in-the-jupyterbook">
 <h2>Referencing other sections/pages in the JupyterBook<a class="headerlink" href="#referencing-other-sections-pages-in-the-jupyterbook" title="Permalink to this headline">#</a></h2>
 <p>There are a number of ways of referencing sections in other pages of the book. One simple option is to provide a label to a heading, using the syntax</p>
@@ -414,7 +434,7 @@ document.write(`
 </section>
 <section id="controlling-what-is-shown-in-the-final-book">
 <h2>Controlling what is shown in the final book<a class="headerlink" href="#controlling-what-is-shown-in-the-final-book" title="Permalink to this headline">#</a></h2>
-<p><strong>Tags</strong> can be added to control whether cells appear in the final book. These are stored in a JSON format.</p>
+<p><strong>Tags</strong> can be added to control whether cells appear in the final book. These are stored in a JSON format in the cell metadata.</p>
 <p>In the Jupyter Notebook window, cell metadata can be shown by clicking as follows:</p>
 <a class="reference internal image-reference" href="_images/metadata.png"><img alt="_images/metadata.png" class="align-center" src="_images/metadata.png" style="width: 400px;" /></a>
 <p>This bring up the <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Metadata</span></code> button in the top right of a cell and tags can be added with the following syntax:</p>
@@ -532,6 +552,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buttons-in-the-webpage">Buttons in the webpage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-other-sections-pages-in-the-jupyterbook">Referencing other sections/pages in the JupyterBook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-external-webpages">Referencing external webpages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-what-is-shown-in-the-final-book">Controlling what is shown in the final book</a></li>
